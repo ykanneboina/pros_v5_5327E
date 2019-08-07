@@ -25,8 +25,8 @@ void drive(int fr, int fl, int br, int bl){
 
 
 void pidloop(int target){
-  double speed = lift.get_actual_velocity();
-  double rpm = speed*(15);
+  double fspeed = lift.get_actual_velocity();
+  double rpm = fspeed*(15);
   double error = target - rpm;
   double errorprev = error;
   double errorT =+  error;
@@ -140,22 +140,22 @@ void opcontrol() {
     }
 
 //CODE FOR up and down BUTTONS for lift
-    /*
+
     if (master.get_digital(DIGITAL_UP) >= 1){
       pidloop(127);
     }
     else if(master.get_digital(DIGITAL_DOWN)>= 1){
       pidloop(-127);
     }
-    */
 
+    /*
     if (master.get_digital(DIGITAL_UP) >= 1) {
     lift.move_voltage(12000);
     }
     else if(master.get_digital(DIGITAL_DOWN)>= 1){
       lift.move_voltage(-12000);
     }
-
+    */
     else {
       lift.move_voltage(0);
     }
