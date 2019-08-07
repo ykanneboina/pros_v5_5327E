@@ -140,22 +140,22 @@ void opcontrol() {
     }
 
 //CODE FOR up and down BUTTONS for lift
-
+    /*
     if (master.get_digital(DIGITAL_UP) >= 1){
       pidloop(127);
     }
     else if(master.get_digital(DIGITAL_DOWN)>= 1){
       pidloop(-127);
     }
+    */
 
-    /*
     if (master.get_digital(DIGITAL_UP) >= 1) {
     lift.move_voltage(12000);
     }
     else if(master.get_digital(DIGITAL_DOWN)>= 1){
       lift.move_voltage(-12000);
     }
-    */
+
     else {
       lift.move_voltage(0);
     }
