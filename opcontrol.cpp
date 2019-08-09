@@ -101,17 +101,18 @@ void opcontrol() {
 
  while(true)
  {
-   while (master.get_digital(DIGITAL_R1) >= 1)
+   /*while (master.get_digital(DIGITAL_R1) >= 1)
    {
      ang.move_velocity(master.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y));
-   }
+   }*/
 
    int opposite = (master.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y)) * -1;
-   drive(pros::E_CONTROLLER_ANALOG_RIGHT_Y,opposite, pros::E_CONTROLLER_ANALOG_RIGHT_Y, opposite);
-     /*basefr.move_velocity(master.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y));
+   int opposite1 = (master.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y)) * -1;
+   //drive(pros::E_CONTROLLER_ANALOG_RIGHT_Y,opposite, pros::E_CONTROLLER_ANALOG_RIGHT_Y, opposite1);
+     basefr.move_velocity(master.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y));
      basefl.move_velocity(opposite);
      basebr.move_velocity(master.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y));
-     basebl.move_velocity(opposite); */
+     basebl.move_velocity(opposite1);
  }
 
 // CODE FOR x AND y BUTTONS on rollers
